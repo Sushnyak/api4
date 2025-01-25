@@ -34,10 +34,15 @@ public class CardDeliveryTest {
         $("[data-test-id='phone'] input").setValue("+79154230549");
         $("[data-test-id='agreement']").click();
         $$("button").find(Condition.exactText("Забронировать")).click();
+
         //$(Selectors.withText("Встреча успешно забронирована на"))
         //        .should(Condition.visible, Duration.ofSeconds(15));
         //$(Selectors.withText(date)).should(Condition.visible);
-       $(Selectors.withText(date))
+
+        //$(By.cssSelector("Встреча успешно забронирована на")).should(Condition.visible)
+        //        .shouldHave(Condition.exactText(date),Duration.ofSeconds(15));
+
+        $(Selectors.withText(date))
                 .should(Condition.visible, Duration.ofSeconds(15));
     }
 }
